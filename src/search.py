@@ -7,17 +7,11 @@ def climb_hill(start, goal, graph):
     L = []
     path = []
     steps = []
-    expanded = set()
 
     heapq.heappush(L, (graph[start][0], start))
 
     while L:
         _, cur = heapq.heappop(L)
-
-        if cur in expanded:
-            continue
-
-        expanded.add(cur)
         path.append(cur)
 
         if cur == goal:
@@ -27,7 +21,7 @@ def climb_hill(start, goal, graph):
         neighbors = graph.get(cur, (None, []))[1]
 
         for neighbor in neighbors:
-            if neighbor in graph and neighbor not in expanded:
+            if neighbor in graph:
                 heapq.heappush(LA, (graph[neighbor][0], neighbor))
 
         la_nodes = [n for _, n in sorted(LA)]
