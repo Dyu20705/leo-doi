@@ -4,7 +4,7 @@ from gui import show_table
 
 def main():
 
-    test_id = input("Test number: ")
+    test_id = input("Test number: ").strip()
 
     start, goal, graph = load_test(test_id)
 

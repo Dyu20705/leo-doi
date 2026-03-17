@@ -1,8 +1,12 @@
-def load_test(test_id):
-    fileName = f'test/test{test_id}.txt'
+from pathlib import Path
 
-    with open(fileName, 'r') as f:
-        # strip() removes the newline character at the end of each line
+
+def load_test(test_id):
+    normalized_test_id = str(test_id).strip()
+    file_name = f"test{normalized_test_id}.txt"
+    file_path = Path(__file__).resolve().parent.parent / "test" / file_name
+
+    with open(file_path, 'r', encoding='utf-8') as f:
         lines = [line.strip() for line in f.readlines()]
     
     start = lines[0]

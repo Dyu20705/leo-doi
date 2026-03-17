@@ -37,13 +37,13 @@ leo-doi/
 Tại thư mục gốc dự án, chạy một trong hai lệnh:
 
 ```bash
-py main.py
+py src/main.py
 ```
 
 hoặc
 
 ```bash
-python main.py
+python src/main.py
 ```
 
 Sau đó nhập số test khi được hỏi:
@@ -91,7 +91,7 @@ Path: A -> D -> E -> G -> B
 
 ### `'python' is not recognized ...`
 
-- Dùng `py main.py` trên Windows.
+- Dùng `py src/main.py` trên Windows.
 - Hoặc cài Python và thêm vào PATH.
 
 ### `KeyError` khi truy cập graph
